@@ -1,13 +1,18 @@
 # sidechic
 
-brainrot ad agency landing page. static HTML, no build step.
+brainrot ad agency landing page. static HTML, no build step. site lives in `public/`.
 
-## deploy
+## deploy (Cloudflare Workers, static assets)
 
-push to GitHub, then import the repo in Vercel — it auto-detects this as a static site. no config needed beyond what's in `vercel.json`.
+Config is in `wrangler.jsonc` (Worker name `sidechic`, serves `./public`).
+
+- CLI: `npx wrangler@4 deploy`
+- Or Cloudflare dashboard → Workers & Pages → Create → Import a repository → pick this repo (deploy command `npx wrangler deploy`, no build command).
+
+Custom domain: Workers & Pages → `sidechic` → Settings → Domains & Routes → Add → Custom domain.
 
 ## local preview
 
 ```
-npx serve .
+npx serve public
 ```

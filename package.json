@@ -4,6 +4,7 @@
   "private": true,
   "description": "sidechic agency landing page",
   "scripts": {
-    "dev": "npx serve ."
+    "dev": "npx serve public",
+    "deploy": "npx wrangler@4 deploy"
   }
 }
